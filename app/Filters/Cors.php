@@ -21,31 +21,27 @@ class Cors implements FilterInterface
     {
         /** @var ResponseInterface $response */
         $response = service('response');
-
+    
         // Set your Origin.
         $response->setHeader('Access-Control-Allow-Origin', '*');
-
+        $response->setHeader('Access-Control-Allow-Methods', '*');
+        $response->setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    
         // Set this header if the client sends Cookies.
-        // $response->setHeader('Access-Control-Allow-Credentials', 'true');
-
-        if ($request==('OPTIONS')) {
+        $response->setHeader('Access-Control-Allow-Credentials', 'true');
+    
+        if ($request->getMethod() === 'OPTIONS') {
             $response->setStatusCode(204);
-
+    
             // Set headers to allow.
-            $response->setHeader(
-                'Access-Control-Allow-Headers',
-                '*'
-            );
-
+            $response->setHeader('Access-Control-Allow-Headers', '*');
+    
             // Set methods to allow.
-            $response->setHeader(
-                'Access-Control-Allow-Methods',
-                '*'
-            );
-
+            $response->setHeader('Access-Control-Allow-Methods', '*');
+    
             // Set how many seconds the results of a preflight request can be cached.
             $response->setHeader('Access-Control-Max-Age', '7200');
-
+    
             return $response;
         }
     }
