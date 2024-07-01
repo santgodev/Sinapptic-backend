@@ -10,6 +10,16 @@ class usuarioModel extends Model
     protected $primaryKey = 'ID';
     protected $allowedFields = ['NOMBRE', 'APELLIDO', 'CORREO'];
 
+    public function obtenerUsuarioPorCorreo($correo)
+    {
+        $query = $this->db->table('usuario')
+                          ->select('usuario.*, rol.DESCRIPCION as ROL_DESCRIPCION')
+                          ->join('rol', 'rol.ID_ROL = usuario.ID_ROL', 'left')
+                          ->where('usuario.CORREO', $correo)
+                          ->get();
+        
+        return $query->getRowArray(); 
+    }
     public function listarUsuarioId($id)
     {
         $query = $this->select(['NOMBRE', 'APELLIDO', 'CORREO', 'IMG_URL'])

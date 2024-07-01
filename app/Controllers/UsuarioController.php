@@ -16,13 +16,17 @@ class UsuarioController extends BaseController
         $this->usuarioModel = new usuarioModel();
     }
 
-    public function listarUsuarioId()  {
-        $id=$this->request->getJSON('ID');
-        $dataa=$this->usuarioModel->listarUsuarioId($id);
+    public function listarUsuarioId()
+    {
+        $id = $this->request->getJSON('ID');
+        $dataa = $this->usuarioModel->listarUsuarioId($id);
         return  $this->response->setJSON($dataa);
     }
-    public function listarUsuarios()  {
-        $data=$this->usuarioModel->listarUsuarios();
+    public function listarUsuarios()
+    {
+        $data = $this->usuarioModel->listarUsuarios();
         return  $this->response->setJSON($data);
+        $CLAVE = env('JWT_SEGURA');
     }
+ 
 }
