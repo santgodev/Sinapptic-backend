@@ -1,0 +1,83 @@
+CRITICAL - 2024-06-26 21:45:37 --> Error: Call to a member function getResult() on null
+[Method: POST, Route: auth/login]
+in APPPATH\Models\usuarioModel.php on line 17.
+ 1 APPPATH\Controllers\AuthController.php(17): App\Models\usuarioModel->obtenerUsuarioPorCorreo([...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-26 21:48:30 --> Error: Call to a member function getResult() on array
+[Method: POST, Route: auth/login]
+in APPPATH\Models\usuarioModel.php on line 17.
+ 1 APPPATH\Controllers\AuthController.php(17): App\Models\usuarioModel->obtenerUsuarioPorCorreo([...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-26 21:49:09 --> Error: Call to a member function get() on array
+[Method: POST, Route: auth/login]
+in APPPATH\Models\usuarioModel.php on line 17.
+ 1 APPPATH\Controllers\AuthController.php(17): App\Models\usuarioModel->obtenerUsuarioPorCorreo([...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-26 22:57:04 --> Error: Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+[Method: POST, Route: auth/login]
+in APPPATH\Controllers\AuthController.php on line 20.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-26 22:57:57 --> Error: Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+[Method: POST, Route: auth/login]
+in APPPATH\Controllers\AuthController.php on line 20.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-26 22:58:52 --> Error: Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+[Method: POST, Route: auth/login]
+in APPPATH\Controllers\AuthController.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-26 23:22:22 --> Error: Call to undefined function App\Controllers\hashPassword()
+[Method: POST, Route: auth/login]
+in APPPATH\Controllers\AuthController.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-26 23:33:13 --> Error: Call to undefined function App\Controllers\hashPassword()
+[Method: POST, Route: auth/login]
+in APPPATH\Controllers\AuthController.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')

@@ -4,6 +4,7 @@ namespace Config;
 
 use CodeIgniter\Config\Filters as BaseFilters;
 use App\Filters\Cors; // Add this.
+use App\Filters\JwtAuthFilter; // Add this.
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\ForceHTTPS;
@@ -34,6 +35,8 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'jwt-auth'      => JwtAuthFilter::class
+
     ];
 
     /**
@@ -52,27 +55,22 @@ class Filters extends BaseFilters
     public array $required = [
         'before' => [
             'cors',
+            'honeypot', 
+            //'csrf'
         ],
         'after' => [
             'toolbar',     // Debug Toolbar
         ],
     ];
 
-    /**
-     * List of filter aliases that are always
-     * applied before and after every request.
-     *
-     * @var array<string, array<string, array<string, string>>>|array<string, list<string>>
-     */
     public array $globals = [
         'before' => [
-            // 'honeypot',
-            // 'csrf',
-            // 'invalidchars',
+            'cors',
+            // Otros filtros globales antes de la acción del controlador
         ],
         'after' => [
-            // 'honeypot',
-            // 'secureheaders',
+            //'toolbar',
+            // Otros filtros globales después de la acción del controlador
         ],
     ];
 

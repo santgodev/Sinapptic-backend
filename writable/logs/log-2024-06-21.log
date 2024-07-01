@@ -1,0 +1,204 @@
+ERROR - 2024-06-21 18:09:38 --> mysqli_sql_exception: Table 'sinapptic.permisos_modulos' doesn't exist in C:\xampp\htdocs\Sinapptic\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\Sinapptic\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `TITULO`...', 0)
+#1 C:\xampp\htdocs\Sinapptic\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `TITULO`...')
+#2 C:\xampp\htdocs\Sinapptic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `TITULO`...')
+#3 C:\xampp\htdocs\Sinapptic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `TITULO`...', Array, false)
+#4 C:\xampp\htdocs\Sinapptic\app\Controllers\ModuloController.php(43): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(933): App\Controllers\ModuloController->listarModulosAutorizados()
+#6 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ModuloController))
+#7 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\Sinapptic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\Sinapptic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\Sinapptic\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\Sinapptic\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-06-21 18:09:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sinapptic.permisos_modulos' doesn't exist
+[Method: POST, Route: modulosAturorizados]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = :permisos_modulos.VISTA:
+AND `usuario`.`ID` = :usuario.ID:', [...], false)
+ 2 APPPATH\Controllers\ModuloController.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ModuloController->listarModulosAutorizados()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ModuloController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-21 18:09:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sinapptic.permisos_modulos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = 1
+AND `usuario`.`ID` = (2)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = 1
+AND `usuario`.`ID` = (2)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = :permisos_modulos.VISTA:
+AND `usuario`.`ID` = :usuario.ID:', [...], false)
+ 4 APPPATH\Controllers\ModuloController.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ModuloController->listarModulosAutorizados()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ModuloController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-21 18:09:39 --> [Caused by] mysqli_sql_exception: Table 'sinapptic.permisos_modulos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = 1
+AND `usuario`.`ID` = (2)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = 1
+AND `usuario`.`ID` = (2)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = 1
+AND `usuario`.`ID` = (2)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = :permisos_modulos.VISTA:
+AND `usuario`.`ID` = :usuario.ID:', [...], false)
+ 5 APPPATH\Controllers\ModuloController.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ModuloController->listarModulosAutorizados()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ModuloController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+ERROR - 2024-06-21 18:09:47 --> mysqli_sql_exception: Table 'sinapptic.permisos_modulos' doesn't exist in C:\xampp\htdocs\Sinapptic\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\Sinapptic\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `TITULO`...', 0)
+#1 C:\xampp\htdocs\Sinapptic\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `TITULO`...')
+#2 C:\xampp\htdocs\Sinapptic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `TITULO`...')
+#3 C:\xampp\htdocs\Sinapptic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `TITULO`...', Array, false)
+#4 C:\xampp\htdocs\Sinapptic\app\Controllers\ModuloController.php(43): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(933): App\Controllers\ModuloController->listarModulosAutorizados()
+#6 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ModuloController))
+#7 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\Sinapptic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\Sinapptic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\Sinapptic\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\Sinapptic\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-06-21 18:09:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sinapptic.permisos_modulos' doesn't exist
+[Method: POST, Route: modulosAturorizados]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = :permisos_modulos.VISTA:
+AND `usuario`.`ID` = :usuario.ID:', [...], false)
+ 2 APPPATH\Controllers\ModuloController.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ModuloController->listarModulosAutorizados()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ModuloController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-21 18:09:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sinapptic.permisos_modulos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = 1
+AND `usuario`.`ID` = (2)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = 1
+AND `usuario`.`ID` = (2)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = :permisos_modulos.VISTA:
+AND `usuario`.`ID` = :usuario.ID:', [...], false)
+ 4 APPPATH\Controllers\ModuloController.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ModuloController->listarModulosAutorizados()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ModuloController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-21 18:09:48 --> [Caused by] mysqli_sql_exception: Table 'sinapptic.permisos_modulos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = 1
+AND `usuario`.`ID` = (2)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = 1
+AND `usuario`.`ID` = (2)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = 1
+AND `usuario`.`ID` = (2)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `TITULO`, `ICONO`, `RUTA`
+FROM `modulo`
+JOIN `permisos_modulos` ON `permisos_modulos`.`ID_MODULO` = `modulo`.`ID_MODULO`
+JOIN `rol` ON `permisos_modulos`.`ID_ROL` = `rol`.`ID_ROL`
+JOIN `usuario` ON `rol`.`ID_ROL` = `usuario`.`ID_ROL`
+WHERE `permisos_modulos`.`VISTA` = :permisos_modulos.VISTA:
+AND `usuario`.`ID` = :usuario.ID:', [...], false)
+ 5 APPPATH\Controllers\ModuloController.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ModuloController->listarModulosAutorizados()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ModuloController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')

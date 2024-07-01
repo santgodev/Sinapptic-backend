@@ -1,0 +1,186 @@
+CRITICAL - 2024-06-27 03:10:43 --> Error: Call to undefined function App\Controllers\hashPassword()
+[Method: POST, Route: auth/login]
+in APPPATH\Controllers\AuthController.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-27 03:11:27 --> Error: Call to undefined function App\Controllers\hashPassword()
+[Method: POST, Route: auth/login]
+in APPPATH\Controllers\AuthController.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-27 03:28:34 --> Error: Call to undefined function App\Controllers\verifyPassword()
+[Method: POST, Route: auth/login]
+in APPPATH\Controllers\AuthController.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+ERROR - 2024-06-27 03:38:38 --> mysqli_sql_exception: Illegal parameter data types varchar and row for operation '=' in C:\xampp\htdocs\Sinapptic\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\Sinapptic\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Sinapptic\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Sinapptic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Sinapptic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Sinapptic\system\Model.php(919): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Sinapptic\app\Models\usuarioModel.php(17): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\Sinapptic\app\Controllers\AuthController.php(19): App\Models\usuarioModel->obtenerUsuarioPorCorreo(Array)
+#7 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(933): App\Controllers\AuthController->login()
+#8 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Sinapptic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Sinapptic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Sinapptic\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Sinapptic\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2024-06-27 03:38:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types varchar and row for operation '='
+[Method: POST, Route: auth/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `CORREO` = :CORREO:', [...], false)
+ 2 SYSTEMPATH\Model.php(919): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\usuarioModel.php(17): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\AuthController.php(19): App\Models\usuarioModel->obtenerUsuarioPorCorreo([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-27 03:38:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types varchar and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuario`
+WHERE `CORREO` = (\'camilo@example.com\',\'contraseña2\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuario`
+WHERE `CORREO` = (\'camilo@example.com\',\'contraseña2\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `CORREO` = :CORREO:', [...], false)
+ 4 SYSTEMPATH\Model.php(919): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\usuarioModel.php(17): CodeIgniter\Model->__call('get', [])
+ 6 APPPATH\Controllers\AuthController.php(19): App\Models\usuarioModel->obtenerUsuarioPorCorreo([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-27 03:38:38 --> [Caused by] mysqli_sql_exception: Illegal parameter data types varchar and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT *
+FROM `usuario`
+WHERE `CORREO` = (\'camilo@example.com\',\'contraseña2\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuario`
+WHERE `CORREO` = (\'camilo@example.com\',\'contraseña2\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuario`
+WHERE `CORREO` = (\'camilo@example.com\',\'contraseña2\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `CORREO` = :CORREO:', [...], false)
+ 5 SYSTEMPATH\Model.php(919): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\usuarioModel.php(17): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\AuthController.php(19): App\Models\usuarioModel->obtenerUsuarioPorCorreo([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+ERROR - 2024-06-27 03:39:31 --> mysqli_sql_exception: Illegal parameter data types varchar and row for operation '=' in C:\xampp\htdocs\Sinapptic\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\Sinapptic\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Sinapptic\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Sinapptic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Sinapptic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Sinapptic\system\Model.php(919): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Sinapptic\app\Models\usuarioModel.php(17): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\Sinapptic\app\Controllers\AuthController.php(19): App\Models\usuarioModel->obtenerUsuarioPorCorreo(Array)
+#7 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(933): App\Controllers\AuthController->login()
+#8 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Sinapptic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Sinapptic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Sinapptic\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\Sinapptic\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2024-06-27 03:39:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types varchar and row for operation '='
+[Method: POST, Route: auth/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `CORREO` = :CORREO:', [...], false)
+ 2 SYSTEMPATH\Model.php(919): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\usuarioModel.php(17): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\AuthController.php(19): App\Models\usuarioModel->obtenerUsuarioPorCorreo([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-27 03:39:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types varchar and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuario`
+WHERE `CORREO` = (\'camilo@example.com\',\'contraseña2\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuario`
+WHERE `CORREO` = (\'camilo@example.com\',\'contraseña2\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `CORREO` = :CORREO:', [...], false)
+ 4 SYSTEMPATH\Model.php(919): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\usuarioModel.php(17): CodeIgniter\Model->__call('get', [])
+ 6 APPPATH\Controllers\AuthController.php(19): App\Models\usuarioModel->obtenerUsuarioPorCorreo([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-27 03:39:31 --> [Caused by] mysqli_sql_exception: Illegal parameter data types varchar and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT *
+FROM `usuario`
+WHERE `CORREO` = (\'camilo@example.com\',\'contraseña2\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuario`
+WHERE `CORREO` = (\'camilo@example.com\',\'contraseña2\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuario`
+WHERE `CORREO` = (\'camilo@example.com\',\'contraseña2\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `CORREO` = :CORREO:', [...], false)
+ 5 SYSTEMPATH\Model.php(919): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\usuarioModel.php(17): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\AuthController.php(19): App\Models\usuarioModel->obtenerUsuarioPorCorreo([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')

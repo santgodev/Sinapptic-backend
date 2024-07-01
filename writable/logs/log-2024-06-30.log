@@ -1,0 +1,108 @@
+CRITICAL - 2024-06-30 17:41:47 --> TypeError: CodeIgniter\Database\BaseBuilder::select(): Argument #2 ($escape) must be of type ?bool, string given, called in C:\xampp\htdocs\Sinapptic\system\Model.php on line 919
+[Method: POST, Route: auth/login]
+in SYSTEMPATH\Database\BaseBuilder.php on line 397.
+ 1 SYSTEMPATH\Model.php(919): CodeIgniter\Database\BaseBuilder->select('*', 'rol.DESCRIPCION')
+ 2 APPPATH\Models\usuarioModel.php(15): CodeIgniter\Model->__call('select', [...])
+ 3 APPPATH\Controllers\AuthController.php(29): App\Models\usuarioModel->obtenerUsuarioPorCorreo('camilo@example.com')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-30 17:42:16 --> TypeError: CodeIgniter\Database\BaseBuilder::select(): Argument #2 ($escape) must be of type ?bool, string given, called in C:\xampp\htdocs\Sinapptic\system\Model.php on line 919
+[Method: POST, Route: auth/login]
+in SYSTEMPATH\Database\BaseBuilder.php on line 397.
+ 1 SYSTEMPATH\Model.php(919): CodeIgniter\Database\BaseBuilder->select('*', 'rol.DESCRIPCION')
+ 2 APPPATH\Models\usuarioModel.php(15): CodeIgniter\Model->__call('select', [...])
+ 3 APPPATH\Controllers\AuthController.php(29): App\Models\usuarioModel->obtenerUsuarioPorCorreo('camilo@example.com')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+ERROR - 2024-06-30 17:44:21 --> mysqli_sql_exception: Unknown column 'rol.ID' in 'on clause' in C:\xampp\htdocs\Sinapptic\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp\htdocs\Sinapptic\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `usuario...', 0)
+#1 C:\xampp\htdocs\Sinapptic\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `usuario...')
+#2 C:\xampp\htdocs\Sinapptic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `usuario...')
+#3 C:\xampp\htdocs\Sinapptic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#4 C:\xampp\htdocs\Sinapptic\app\Models\usuarioModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Sinapptic\app\Controllers\AuthController.php(29): App\Models\usuarioModel->obtenerUsuarioPorCorreo('camilo@example....')
+#6 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(933): App\Controllers\AuthController->login()
+#7 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\xampp\htdocs\Sinapptic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Sinapptic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Sinapptic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Sinapptic\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\Sinapptic\system\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2024-06-30 17:44:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'rol.ID' in 'on clause'
+[Method: POST, Route: auth/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `usuario`.*, `rol`.`DESCRIPCION` as `ROL_DESCRIPCION`
+FROM `usuario`
+LEFT JOIN `rol` ON `rol`.`ID` = `usuario`.`ID_ROL`
+WHERE `usuario`.`CORREO` = :usuario.CORREO:', [...], false)
+ 2 APPPATH\Models\usuarioModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\AuthController.php(29): App\Models\usuarioModel->obtenerUsuarioPorCorreo('camilo@example.com')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-30 17:44:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'rol.ID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `usuario`.*, `rol`.`DESCRIPCION` as `ROL_DESCRIPCION`
+FROM `usuario`
+LEFT JOIN `rol` ON `rol`.`ID` = `usuario`.`ID_ROL`
+WHERE `usuario`.`CORREO` = \'camilo@example.com\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `usuario`.*, `rol`.`DESCRIPCION` as `ROL_DESCRIPCION`
+FROM `usuario`
+LEFT JOIN `rol` ON `rol`.`ID` = `usuario`.`ID_ROL`
+WHERE `usuario`.`CORREO` = \'camilo@example.com\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `usuario`.*, `rol`.`DESCRIPCION` as `ROL_DESCRIPCION`
+FROM `usuario`
+LEFT JOIN `rol` ON `rol`.`ID` = `usuario`.`ID_ROL`
+WHERE `usuario`.`CORREO` = :usuario.CORREO:', [...], false)
+ 4 APPPATH\Models\usuarioModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\AuthController.php(29): App\Models\usuarioModel->obtenerUsuarioPorCorreo('camilo@example.com')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
+CRITICAL - 2024-06-30 17:44:21 --> [Caused by] mysqli_sql_exception: Unknown column 'rol.ID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `usuario`.*, `rol`.`DESCRIPCION` as `ROL_DESCRIPCION`
+FROM `usuario`
+LEFT JOIN `rol` ON `rol`.`ID` = `usuario`.`ID_ROL`
+WHERE `usuario`.`CORREO` = \'camilo@example.com\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `usuario`.*, `rol`.`DESCRIPCION` as `ROL_DESCRIPCION`
+FROM `usuario`
+LEFT JOIN `rol` ON `rol`.`ID` = `usuario`.`ID_ROL`
+WHERE `usuario`.`CORREO` = \'camilo@example.com\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `usuario`.*, `rol`.`DESCRIPCION` as `ROL_DESCRIPCION`
+FROM `usuario`
+LEFT JOIN `rol` ON `rol`.`ID` = `usuario`.`ID_ROL`
+WHERE `usuario`.`CORREO` = \'camilo@example.com\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `usuario`.*, `rol`.`DESCRIPCION` as `ROL_DESCRIPCION`
+FROM `usuario`
+LEFT JOIN `rol` ON `rol`.`ID` = `usuario`.`ID_ROL`
+WHERE `usuario`.`CORREO` = :usuario.CORREO:', [...], false)
+ 5 APPPATH\Models\usuarioModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\AuthController.php(29): App\Models\usuarioModel->obtenerUsuarioPorCorreo('camilo@example.com')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('C:\\xampp\\htdocs\\Sinapptic\\public\\index.php')
