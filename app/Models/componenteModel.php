@@ -8,6 +8,12 @@ class componenteModel extends Model
     protected $table = 'componente';
     protected $primaryKey = 'ID_componente';
     protected $allowedFields = ['TITULO','ICONO'];
+    public function listarcomponentes()
+    {
+        $db = $this->db;    
+        $query = $db->table('componente')->select('*')->get();
+        return  $query->getRowArray();
+    }
     public function listarcomponentesAutorizados($id)
     {
         $db = $this->db;    
@@ -22,4 +28,5 @@ class componenteModel extends Model
             ->get();
         return  $query->getResult();
     }
+
 }

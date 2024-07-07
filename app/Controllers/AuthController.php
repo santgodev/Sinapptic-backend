@@ -54,7 +54,7 @@ class AuthController extends BaseController
         $secretKey = getenv('JWT_SEGURA');
         $payload = [
             'iat' => time(),  
-            'exp' => time() + 60,  
+            'exp' => time() + 3600,  
             'sub' => base_url(),
             'data' => [
                 'Nombre' => $user['NOMBRE'],

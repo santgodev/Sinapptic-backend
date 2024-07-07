@@ -14,9 +14,17 @@ class ModuloController extends BaseController
         $this->componenteModel = new moduloModel();
     }
 
-    public function listarModulosAutorizados(){
+
+    public function listarModulos()
+    {
+        $modulo = $this->componenteModel->listarModulos();
+        return  $this->response->setJSON($modulo);
+    }
+
+    public function listarModulosAutorizados()
+    {
         $idUsuario = $this->request->getJSON('ID');
-        $componentes = $this->componenteModel->listarModulos($idUsuario);
+        $componentes = $this->componenteModel->listarModulosAutorizados($idUsuario);
         if ($componentes) {
             return $this->response->setJSON($componentes);
         } else {

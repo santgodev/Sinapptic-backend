@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Models\componenteModel;
-use CodeIgniter\HTTP\Request;
 
 class ComponenteController extends BaseController
 {
@@ -12,8 +11,16 @@ class ComponenteController extends BaseController
     {
         $this->componenteModel = new componenteModel();
     }
+
+    public function listarComponentes(){
+        $componentes=$this->componenteModel->listarcomponentes();
+        return $this->response->setJSON($componentes);
+    }
+
+
     public function listarcomponentesAutorizados(){
-        $idUsuario = $this->request->getJSON('ID');
+        $request = $this->request->getJSON();
+        $idUsuario=$request->ID;
         $componentes = $this->componenteModel->listarcomponentesAutorizados($idUsuario);
         if ($componentes) {
             return $this->response->setJSON($componentes);
